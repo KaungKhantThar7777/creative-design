@@ -12,12 +12,12 @@
   </head>
   <body>
     <div class="container">
-      <section class="section-1">
+      <section class="section-1" id="home">
         <nav class="navbar">
-          <a href="#" class="navbar-link">Design</a>
-          <a href="#" class="navbar-link">Customers</a>
-          <a href="#" class="navbar-link">Team</a>
-          <a href="#" class="navbar-link">Contact</a>
+          <a href="#home" class="navbar-link">Design</a>
+          <a href="#customers" class="navbar-link">Customers</a>
+          <a href="#team" class="navbar-link">Team</a>
+          <a href="#contact" class="navbar-link">Contact</a>
         </nav>
         <div class="floating-bg"></div>
         <h1 class="section-1-heading">Creative Design</h1>
@@ -25,7 +25,7 @@
           <i class="fas fa-bezier-curve"></i>
         </div>
       </section>
-      <section class="section-2">
+      <section class="section-2" id="customers">
         <h1 class="section-heading">Customers</h1>
         <div class="customers-wrapper">
           <div class="customer">
@@ -96,7 +96,7 @@
           </div>
         </div>
       </section>
-      <section class="section-3">
+      <section class="section-3" id="team">
         <h1 class="section-heading">Our Team</h1>
         <div class="teams-wrapper">
           <div class="team-member">
@@ -193,7 +193,27 @@
           </div>
         </div>
       </section>
+      <section class="section-4" id="contact">
+        <h1 class="section-heading">Contact</h1>
+        <div class="form-container">
+          <img
+            src="./img/iconfinder_Email_email_envelope_letter_mail_message_image_6590521.png"
+            alt="mail"
+            class="form-img"
+          />
+          <form class="contact-form">
+            <input type="text" placeholder="Your Name" />
+            <input type="email" placeholder="Your Email" />
+            <textarea placeholder="Your Message"></textarea>
+            <input type="submit" value="Send" />
+          </form>
+        </div>
+        <p class="copyright">Copyright &copy; All Rights Reserved</p>
+      </section>
     </div>
+    <a href="#home" class="scroll-up-btn">
+      <i class="fas fa-arrow-up"></i>
+    </a>
     <script src="./script.js"></script>
   </body>
 </html>

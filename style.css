@@ -12,8 +12,10 @@
 }
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
-body {
+.container {
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -28,7 +30,7 @@ body {
 /* Section 1 */
 .section-1 {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #fff;
   position: relative;
 }
@@ -117,7 +119,7 @@ body {
 .section-2 {
   background-color: #fffeee;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -184,9 +186,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 5rem 0;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .teams-wrapper {
@@ -202,6 +203,11 @@ body {
   padding: 1rem 1rem 2rem 1rem;
   box-shadow: 1rem 1rem 2rem #ddd, -1rem -1rem 2rem #eee;
   position: relative;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.team-member:hover {
+  opacity: 1;
 }
 .team-member:first-child {
   align-self: flex-start;
@@ -299,3 +305,188 @@ body {
   background-color: #fff;
 }
 /* End of Section 3 */
+
+/* Section 4 */
+.section-4 {
+  width: 100%;
+  min-height: 130vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-container {
+  width: 80%;
+  height: 40%;
+  background-color: #e5e9ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0.3rem 0.3rem 0.4rem #ccc, -0.1rem -0.1rem 0.4rem #ccc;
+  perspective: 100rem;
+}
+
+.form-img {
+  width: 50rem;
+  color: white;
+  object-fit: cover;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transform: rotateY(20deg);
+  background-color: rgba(50, 231, 235, 0.8);
+  transition: all 0.5s;
+  box-shadow: -0.5rem -0.5rem 2rem #ccc;
+}
+.form-img:hover {
+  transform: translateY(-2rem) rotateY(20deg);
+  box-shadow: -1rem -1rem 2rem #ccc;
+}
+.contact-form {
+  width: 45rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 3rem 3rem 4rem #aaa;
+  transform: rotateY(-20deg);
+  transition: all 0.5s;
+}
+.contact-form:hover {
+  transform: rotateY(-20deg) translateY(-2rem);
+  box-shadow: 4rem 4rem 5rem #aaa;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  margin: 1rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: inset 0.1rem 0.1rem 0.2rem #ddd, inset -0.1rem -0.1rem 0.2rem #ddd;
+}
+
+.contact-form textarea {
+  max-height: 25rem;
+  min-height: 10rem;
+  max-width: 100%;
+  min-width: 70%;
+}
+
+.contact-form input[type="submit"] {
+  background-color: rgba(50, 231, 235, 0.8);
+  color: #fff;
+  letter-spacing: 0.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.contact-form input[type="submit"]:hover {
+  background-color: rgba(50, 235, 143, 0.8);
+}
+.copyright {
+  font-size: 2rem;
+  color: #796717;
+  letter-spacing: 0.2rem;
+  margin-top: 5rem;
+}
+/* End of Section 4 */
+
+.scroll-up-btn {
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: rgba(50, 231, 235, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+.scroll-up-btn i {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.scroll-up-btn:hover {
+  background-color: rgba(50, 235, 143, 0.8);
+}
+
+/* media query */
+@media (max-width: 1450px) {
+  html {
+    font-size: 50%;
+  }
+  .section-1 {
+    min-height: 80vh;
+  }
+  .section-1-heading {
+    font-size: 6rem;
+    top: 25vw;
+  }
+  .logo {
+    top: 40vw;
+  }
+  .section-2,
+  .section-3,
+  .section-4 {
+    min-height: auto;
+  }
+  .customers-wrapper,
+  .teams-wrapper {
+    flex-wrap: wrap;
+  }
+  .customer,
+  .team-member {
+    margin: 5rem;
+    height: auto;
+  }
+  .section-heading {
+    font-size: 6rem;
+    margin: 2rem 0;
+  }
+  .form-img {
+    display: none;
+  }
+  .contact-form {
+    transform: rotateY(0deg);
+  }
+  .contact-form:hover {
+    transform: translateY(-1rem) rotateY(0deg);
+  }
+  .copyright {
+    margin: 3rem 0;
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 90%;
+  }
+  .floating-bg {
+    top: -60vw;
+  }
+  .section-1-heading {
+    top: 50vw;
+  }
+  .logo {
+    top: 65vw;
+  }
+  .navbar-link {
+    font-size: 1.5rem;
+  }
+  .section-1-heading {
+    font-size: 3rem;
+  }
+  .logo i {
+    font-size: 5rem;
+  }
+  .section-heading {
+    font-size: 3rem;
+    margin: 5rem 0;
+  }
+}
